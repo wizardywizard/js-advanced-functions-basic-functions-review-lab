@@ -27,10 +27,11 @@ let Calculator = {
     }
 }
 
-function actionApplyer(num = 0, array){
-    if (array === []){
-        return num
-    }else{
-        return ((num * 2) + 1000) % 7 
-    }    
+let actionApplyer = function(num, array){
+    let a = num
+
+    for (let i = 0; i < array.length; i++){
+        a = array[i](a)
+    }
+    return a
 }
